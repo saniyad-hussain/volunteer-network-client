@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import VolunteerList from './components/VolunteerList/VolunteerList';
 export const userContext = createContext();
 
 function App() {
@@ -25,7 +26,13 @@ function App() {
 						<Route path="/login">
 							<Login />
 						</Route>
-						<PrivateRoute path="/registration">
+						{/* <Route path="/registration/:id">
+							<Registration />
+						</Route> */}
+						<Route path="/volunteerlist">
+							<VolunteerList />
+						</Route>
+						<PrivateRoute path="/registration/:id">
 							<Registration />
 						</PrivateRoute>
 					</Switch>

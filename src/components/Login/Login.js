@@ -4,6 +4,7 @@ import 'firebase/auth';
 import firebaseConfig from './firebase.config';
 import { userContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
+import Header from '../Header/Header';
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
@@ -27,7 +28,7 @@ const Login = () => {
 
 	return (
 		<div>
-			{loggedInUser.name}
+			<Header />
 			<button onClick={googleSignIn}>Google Signin</button>
 		</div>
 	);

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { userContext } from '../../App';
 
 const Header = () => {
+	const [loggedInUser, setloggedInUser] = useContext(userContext);
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<div className="container">
-				<a className="navbar-brand" href="#">
+				<a className="navbar-brand" href="/">
 					<img src={`${process.env.PUBLIC_URL}/assets/logos/Group-1329.png`} alt="" />
 				</a>
 				<button
@@ -40,6 +42,7 @@ const Header = () => {
 								Disabled
 							</a>
 						</li>
+						<li>{loggedInUser.name}</li>
 					</ul>
 				</div>
 			</div>
