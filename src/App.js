@@ -7,6 +7,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import VolunteerList from './components/VolunteerList/VolunteerList';
 import Dashboard from './components/Dashboard/Dashboard';
 import Events from './components/Events/Events';
+import NotFound from './components/NotFound/NotFound';
 export const userContext = createContext();
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
 						</Route>
 						<Route path="/addevent">
 							<Events />
+						</Route>
+						<Route path="*">
+							<NotFound />
 						</Route>
 					</Switch>
 				</Router>

@@ -27,7 +27,7 @@ const Registration = () => {
 	};
 
 	const handleSubmit = (e) => {
-		fetch('http://localhost:5000/registered', {
+		fetch('https://immense-woodland-55916.herokuapp.com/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

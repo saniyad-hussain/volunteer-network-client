@@ -7,7 +7,7 @@ import ShowEvents from '../Events/ShowEvents';
 const Home = () => {
 	const [events, setEvents] = useState([]);
 	useEffect(() => {
-		fetch('http://localhost:5000/events')
+		fetch('https://immense-woodland-55916.herokuapp.com/events')
 			.then((res) => res.json())
 			.then((data) => setEvents(data));
 	}, []);

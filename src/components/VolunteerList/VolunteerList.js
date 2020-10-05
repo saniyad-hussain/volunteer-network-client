@@ -7,7 +7,7 @@ const VolunteerList = () => {
 	const [userArea, setUserArea] = useState([]);
 	const [loggedInUser, setloggedInUser] = useContext(userContext);
 	useEffect(() => {
-		fetch(`http://localhost:5000/showlist?email=${loggedInUser.email}`, {
+		fetch(`https://immense-woodland-55916.herokuapp.com/showlist?email=${loggedInUser.email}`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ const VolunteerList = () => {
 	}, []);
 	const handleCancel = (e, id) => {
 		e.persist();
-		fetch(`http://localhost:5000/cancel/${id}`, {
+		fetch(`https://immense-woodland-55916.herokuapp.com/cancel/${id}`, {
 			method: 'DELETE',
 		})
 			.then((res) => res.json())

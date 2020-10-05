@@ -16,7 +16,7 @@ const Events = () => {
 	};
 	const history = useHistory();
 	const addEvent = (e) => {
-		fetch('http://localhost:5000/addevent', {
+		fetch('https://immense-woodland-55916.herokuapp.com/addevent', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

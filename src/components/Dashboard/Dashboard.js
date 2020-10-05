@@ -7,13 +7,13 @@ import './Dashboard.css';
 const Dashboard = () => {
 	const [registerUsers, setRegisterUsers] = useState([]);
 	useEffect(() => {
-		fetch('http://localhost:5000/dashboard')
+		fetch('https://immense-woodland-55916.herokuapp.com/dashboard')
 			.then((res) => res.json())
 			.then((data) => setRegisterUsers(data));
 	}, []);
 	const handleDelete = (e, id) => {
 		e.persist();
-		fetch(`http://localhost:5000/cancel/${id}`, {
+		fetch(`https://immense-woodland-55916.herokuapp.com/cancel/${id}`, {
 			method: 'DELETE',
 		})
 			.then((res) => res.json())
