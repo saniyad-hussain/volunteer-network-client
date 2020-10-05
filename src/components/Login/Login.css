@@ -1,0 +1,22 @@
+.google-login {
+	width: 50%;
+	font-size: 18px;
+	border-radius: 10px;
+	border: gray;
+}
+.icons {
+	width: 28px;
+	margin-right: 10px;
+}
+.login-area {
+	margin-top: 50px;
+}
+.login-section {
+	margin-top: 50px;
+	padding: 100px 50px;
+	border: 2px solid gray;
+	border-radius: 10px;
+}
+.logo-section {
+	padding: 50px;
+}

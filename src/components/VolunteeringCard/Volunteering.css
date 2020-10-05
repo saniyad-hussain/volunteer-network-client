@@ -1,0 +1,15 @@
+.card-body {
+	background-color: #ffbd3e;
+}
+.card-body h5 {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.card {
+	margin-top: 20px;
+}
+
+.card-body a {
+	text-decoration: none;
+}

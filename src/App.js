@@ -6,6 +6,7 @@ import Registration from './components/Registration/Registration';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import VolunteerList from './components/VolunteerList/VolunteerList';
 import Dashboard from './components/Dashboard/Dashboard';
+import Events from './components/Events/Events';
 export const userContext = createContext();
 
 function App() {
@@ -27,9 +28,6 @@ function App() {
 						<Route path="/login">
 							<Login />
 						</Route>
-						{/* <Route path="/registration/:id">
-							<Registration />
-						</Route> */}
 						<Route path="/volunteerlist">
 							<VolunteerList />
 						</Route>
@@ -38,6 +36,9 @@ function App() {
 						</PrivateRoute>
 						<Route path="/dashboard">
 							<Dashboard />
+						</Route>
+						<Route path="/addevent">
+							<Events />
 						</Route>
 					</Switch>
 				</Router>

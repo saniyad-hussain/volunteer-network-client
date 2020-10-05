@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { userContext } from '../../App';
-import Header from '../Header/Header';
+
 import fakeData from '../../fakeData/fakeData';
+import './Registration.css';
+import LogoHeader from '../Header/LogoHeader';
 
 const Registration = () => {
 	const [loggedInUser, setLoggedInUser] = useContext(userContext);
@@ -11,11 +13,11 @@ const Registration = () => {
 
 	const selectedOpt = fakeData.find((chooseOpt) => chooseOpt.id === parseInt(id));
 	const [registration, setRegistration] = useState({
-		name: '',
-		email: '',
+		name: loggedInUser.name,
+		email: loggedInUser.email,
 		date: '',
 		desc: '',
-		chooseOpt: '',
+		chooseOpt: selectedOpt.name,
 	});
 
 	const handleChange = (e) => {
@@ -32,22 +34,36 @@ const Registration = () => {
 			},
 			body: JSON.stringify(registration),
 		});
-		history.push('/volunteerList');
+		history.replace('/volunteerList');
 		e.preventDefault();
 	};
 	return (
 		<div>
-			<Header />
+			<LogoHeader />
+			<h3 className="text-center">Registration</h3>
 			<div className="container">
-				<h1>Registration</h1>
-				<form onSubmit={handleSubmit} method="post">
-					<input type="text" name="name" id="name" onBlur={handleChange} />
-					<input type="email" name="email" id="email" onBlur={handleChange} />
-					<input type="date" name="date" id="date" onBlur={handleChange} />
-					<input type="text" name="desc" id="desc" onBlur={handleChange} />
-					<input type="text" name="chooseOpt" id="chooseOpt" value={selectedOpt.name} onBlur={handleChange} />
-					<button type="submit">Submit</button>
-				</form>
+				<div className="registration-section">
+					<form onSubmit={handleSubmit} method="post">
+						<div className="form-group">
+							<input type="text" name="name" className="form-control" id="name" onBlur={handleChange} value={loggedInUser.name} />
+						</div>
+						<div className="form-group">
+							<input type="email" className="form-control" name="email" id="email" onBlur={handleChange} value={loggedInUser.email} />
+						</div>
+						<div className="form-group">
+							<input type="date" name="date" className="datepicker" id="date" onBlur={handleChange} required />
+						</div>
+						<div className="form-group">
+							<input type="text" name="desc" className="form-control" id="desc" onBlur={handleChange} required />
+						</div>
+						<div className="form-group">
+							<input type="text" name="chooseOpt" className="form-control" id="chooseOpt" value={selectedOpt.name} onBlur={handleChange} />
+						</div>
+						<button className="btn btn-primary" type="submit">
+							Submit
+						</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	);
