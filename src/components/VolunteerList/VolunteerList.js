@@ -6,7 +6,13 @@ const VolunteerList = () => {
 	const [userArea, setUserArea] = useState([]);
 	const [loggedInUser, setloggedInUser] = useContext(userContext);
 	useEffect(() => {
-		fetch(`http://localhost:5000/showlist?email=${loggedInUser.email}`)
+		fetch(`http://localhost:5000/showlist?email=${loggedInUser.email}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				authorization: `Bearer ${sessionStorage.getItem('token')}`,
+			},
+		})
 			.then((res) => res.json())
 			.then((data) => setUserArea(data));
 	}, []);

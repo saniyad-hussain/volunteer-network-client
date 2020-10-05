@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import VolunteerList from './components/VolunteerList/VolunteerList';
+import Dashboard from './components/Dashboard/Dashboard';
 export const userContext = createContext();
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
 						<PrivateRoute path="/registration/:id">
 							<Registration />
 						</PrivateRoute>
+						<Route path="/dashboard">
+							<Dashboard />
+						</Route>
 					</Switch>
 				</Router>
 			</userContext.Provider>
